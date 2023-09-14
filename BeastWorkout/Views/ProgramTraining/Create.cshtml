@@ -1,0 +1,39 @@
+﻿@model BeastWorkout.Models.ProgramTraining
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProgramTraining</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id_program" class="control-label"></label>
+                <select asp-for="Id_program" class="form-control" asp-items="@ViewBag.ListPR">
+                    <option>Sélectionne le programme</option>
+                </select>
+                <span asp-validation-for="Id_program" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_training" class="control-label"></label>
+                <select asp-for="Id_training" class="form-control" asp-items="@ViewBag.ListTR">
+                    <option>Sélectionne le training</option>
+                </select>
+                <span asp-validation-for="Id_training" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

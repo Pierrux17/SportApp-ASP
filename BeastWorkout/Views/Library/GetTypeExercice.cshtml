@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BeastWorkout.Models.TypeExercice>
+
+@{
+    ViewData["Title"] = "GetTypeExercice";
+}
+
+<link rel="stylesheet" href="~/css/library.css" asp-append-version="true" />
+
+<div class="container main_container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 text-center"></div>
+        <div class="col-md-8 text-center">
+            <h1>Types</h1>
+        </div>
+        <div class="col-md-2 text-center"></div>
+    </div>
+
+    <div class="container second_container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6">
+                    <div class="container my-2 text-center bg-custom text-custom image-container">
+                        @if (ViewBag.Id_training != null)
+                        {
+                            <a href="@Url.Action("GetExercice", "Library", new { id_type_exercice = item.Id, id_training = @ViewBag.Id_training })"><img src="@Url.Content(item.Picture)" alt="Logo" class="image_sort img-fluid"></a>
+                            <a class="nav-link" href="@Url.Action("GetExercice", "Library", new { id_type_exercice = item.Id, id_training = @ViewBag.Id_training })">@Html.DisplayFor(modelItem => item.Name)</a>
+                        }
+                        else if (ViewBag.Id_profil != null)
+                        {
+                            <a href="@Url.Action("GetExercice", "Library", new { id_type_exercice = item.Id, id_profil = @ViewBag.Id_profil })"><img src="@Url.Content(item.Picture)" alt="Logo" class="image_sort img-fluid"></a>
+                            <a class="nav-link" href="@Url.Action("GetExercice", "Library", new { id_type_exercice = item.Id, id_profil = @ViewBag.Id_profil })">@Html.DisplayFor(modelItem => item.Name)</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("GetExercice", "Library", new { id_type_exercice = item.Id })"><img src="@Url.Content(item.Picture)" alt="Logo" class="image_sort img-fluid"></a>
+                            <a class="nav-link" href="@Url.Action("GetExercice", "Library", new { id_type_exercice = item.Id })">@Html.DisplayFor(modelItem => item.Name)</a>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

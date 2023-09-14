@@ -1,0 +1,75 @@
+﻿body {
+    background-color: lightgray;
+}
+
+.main_container {
+    padding-bottom: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgba(0, 67, 87, 0.8), rgba(32, 40, 48, 255));
+}
+
+.main_container h1 {
+     margin-top: 30px;
+     color: white;
+}
+
+.image-container .image_sort {
+    border-radius: 10px;
+}
+
+.second_container .bg-custom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: lightgray;
+    font-size: xx-large;
+}
+
+/*-----------GetExercice-----------*/
+.image-container .image_ex {
+    border-radius: 10px;
+    max-width: 300px;
+    max-height: 170px;
+}
+
+/*-----------DetailExercice-----------*/
+
+.image-container .image_detail {
+    border-radius: 10px;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.detail-link {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.second_container .btn-custom {
+    background-color: forestgreen;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bt-custom {
+    background-color: forestgreen;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bt-addprog {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-container .image_type {
+    border-radius: 10px;
+    max-width: 550px;
+    max-height: 550px;
+}

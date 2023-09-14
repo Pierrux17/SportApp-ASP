@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BeastWorkout.Models.TypeProgram>
+
+@{
+    ViewData["Title"] = "GetTypeProgram";
+}
+
+<link rel="stylesheet" href="~/css/library.css" asp-append-version="true" />
+
+<div class="container main_container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 text-center"></div>
+        <div class="col-md-8 text-center">
+            <h1>Catégories de programme</h1>
+        </div>
+        <div class="col-md-2 text-center"></div>
+    </div>
+
+    <div class="container my-4 add_container mb-4">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 bt-custom">
+                <a class="bt-addprog text-white text-center" asp-action="CreateMyProgram" asp-route-id_person="@BeastWorkout.Session.SessionHelper.person.Id">Créer un programme</a>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <div class="container second_container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6">
+                    <div class="container my-2 text-center bg-custom text-custom image-container">
+                        <a href="@Url.Action("AddMyNewProgram", new { id = @BeastWorkout.Session.SessionHelper.person.Id, id_type_program = item.Id })"><img src="@Url.Content(item.Picture)" alt="Image" class="image_type img-fluid"></a>
+                        <a class="nav-link" href="@Url.Action("AddMyNewProgram", new { id = @BeastWorkout.Session.SessionHelper.person.Id, id_type_program = item.Id })">@Html.DisplayFor(modelItem => item.Name)</a>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>

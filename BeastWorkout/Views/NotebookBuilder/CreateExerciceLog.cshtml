@@ -1,0 +1,61 @@
+﻿@model BeastWorkout.Models.ExerciceLog
+
+@{
+    ViewData["Title"] = "CreateExerciceLog";
+}
+
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+<div class="container main_container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 text-center"></div>
+        <div class="col-md-8 text-center">
+            <h1>Training Log n° @ViewBag.Id_training_log </h1>
+        </div>
+        <div class="col-md-2 text-center">
+        </div>
+    </div>
+
+    <div class="container second_container">
+        <div class="container training_container my-2 text-center bg-custom text-custom">
+            <form asp-action="CreateExerciceLog" method="post">
+                <input type="hidden" name="id_training_log" value="@ViewBag.Id_training_log" />
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Exercice</th>
+                            <th>Reps</th>
+                            <th>Weight</th>
+                            <th>Distance</th>
+                            <th>Time</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var trainingExercice in ViewBag.ListEx)
+                        {
+                            <tr>
+                                <td>@trainingExercice.Id_exercice</td>
+                                <td>@trainingExercice.Exercice.Name</td>
+                                <td><input name="ExerciceLogs[@trainingExercice.Id_exercice].Reps" class="form-control" /></td>
+                                <td><input name="ExerciceLogs[@trainingExercice.Id_exercice].Weight" class="form-control" /></td>
+                                <td><input name="ExerciceLogs[@trainingExercice.Id_exercice].Distance" class="form-control" /></td>
+                                <td><input name="ExerciceLogs[@trainingExercice.Id_exercice].Time" class="form-control" /></td>
+                                <td><input name="ExerciceLogs[@trainingExercice.Id_exercice].Comment" class="form-control" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="mb-2">
+                    <input type="submit" value="Valider" class="btn btn-primary btn-lg validate_btn" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MyTrainingLogs" asp-route-id="@BeastWorkout.Session.SessionHelper.person.Id">Back to List</a>
+</div>

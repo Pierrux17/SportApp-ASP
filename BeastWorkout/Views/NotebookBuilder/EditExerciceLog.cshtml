@@ -1,0 +1,75 @@
+﻿@model BeastWorkout.Models.ExerciceLog
+
+@{
+    ViewData["Title"] = "CreateExerciceLog";
+}
+
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+<div class="container main_container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 text-center"></div>
+        <div class="col-md-8 text-center">
+            <h1>EDIT Training Log n° @ViewBag.Id_training_log </h1>
+        </div>
+        <div class="col-md-2 text-center">
+        </div>
+    </div>
+
+    <div class="container second_container">
+        <div class="container training_container my-2 text-center bg-custom text-custom">
+            <form asp-action="EditExerciceLog" method="post">
+                <input type="hidden" name="id_training_log" value="@ViewBag.Id_training_log" />
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Exercice</th>
+                            <th>Reps</th>
+                            <th>Weight</th>
+                            <th>Distance</th>
+                            <th>Time</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var trainingExercice in ViewBag.ListEx)
+                        {
+                            var existingExerciceLog = ViewBag.ExerciceLogValues.ContainsKey(trainingExercice.Id_exercice) ? ViewBag.ExerciceLogValues[trainingExercice.Id_exercice] : null;
+
+                            <tr>
+                                <td>@trainingExercice.Id_exercice</td>
+                                <td>@trainingExercice.Exercice.Name</td>
+                                <td>
+                                    <input name="ExerciceLogs[@trainingExercice.Id_exercice].Id" type="hidden" value="@existingExerciceLog?.Id" />
+                                    <input name="ExerciceLogs[@trainingExercice.Id_exercice].Reps" class="form-control" value="@existingExerciceLog?.Reps" />
+                                </td>
+                                <td>
+                                    <input name="ExerciceLogs[@trainingExercice.Id_exercice].Weight" class="form-control" value="@existingExerciceLog?.Weight" />
+                                </td>
+                                <td>
+                                    <input name="ExerciceLogs[@trainingExercice.Id_exercice].Distance" class="form-control" value="@existingExerciceLog?.Distance" />
+                                </td>
+                                <td>
+                                    <input name="ExerciceLogs[@trainingExercice.Id_exercice].Time" class="form-control" value="@existingExerciceLog?.Time" />
+                                </td>
+                                <td>
+                                    <input name="ExerciceLogs[@trainingExercice.Id_exercice].Comment" class="form-control" value="@existingExerciceLog?.Comment" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+                <div class="mb-2">
+                    <input type="submit" value="Valider" class="btn btn-primary btn-lg validate_btn" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MyTrainingLogs" asp-route-id="@BeastWorkout.Session.SessionHelper.person.Id">Back to List</a>
+</div>

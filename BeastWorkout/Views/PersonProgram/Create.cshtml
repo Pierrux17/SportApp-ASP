@@ -1,0 +1,49 @@
+﻿@model BeastWorkout.Models.PersonProgram
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PersonProgram</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="Id_person" class="control-label"></label>
+            <input asp-for="Id_person" class="form-control" />
+            <span asp-validation-for="Id_person" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="Id_program" class="control-label"></label>
+            <input asp-for="Id_program" class="form-control" />
+            <span asp-validation-for="Id_program" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Id_person" class="control-label"></label>
+                <select asp-for="Id_person" class="form-control" asp-items="@ViewBag.ListPER">
+                    <option>Sélectionne l'utilisateur</option>
+                </select>
+                <span asp-validation-for="Id_person" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_program" class="control-label"></label>
+                <select asp-for="Id_program" class="form-control" asp-items="@ViewBag.ListPRO">
+                    <option>Sélectionne le programme</option>
+                </select>
+                <span asp-validation-for="Id_program" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

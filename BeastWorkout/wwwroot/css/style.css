@@ -1,0 +1,155 @@
+﻿/*--------------------- MyPrograms ---------------------*/
+body {
+    background-color: lightgray;
+}
+.container {
+    border-radius: 10px;
+}
+
+.main_container {
+    padding-bottom: 20px;
+    border-radius: 10px;
+    /*border: solid 1px black;*/
+    /*background-image: linear-gradient(to right, rgba(66, 58, 54, 255), rgba(32, 40, 48, 255));*/
+    background-image: linear-gradient(to right, rgba(0, 67, 87, 0.8), rgba(32, 40, 48, 255));
+}
+
+.main_container h1 {
+    margin-top: 30px;
+    color: white;
+}
+
+.program_container .bg-custom {
+    /*background-color: rgba(32, 40, 48, 255);*/
+    background-color: lightgray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.program_container .nav-link {
+    color: rgba(32, 40, 48, 255);
+}
+
+.add_container .bg-custom {
+    background-color: forestgreen;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.add_container .nav-link {
+    background-color: forestgreen;
+    border: none;
+    font-size: medium;
+}
+
+.add_container .btn-custom {
+    background-color: forestgreen;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/*--------------------- MyTrainings ---------------------*/
+.training_container {
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: lightgray;
+    color: black;
+    padding-top: 20px;
+}
+
+.training_container h3 {
+    margin-bottom: 20px;
+    font-weight:bold;
+}
+
+
+
+/*--------------------- Login ---------------------*/
+.login_container {
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin-top: 50px;
+    margin-bottom:50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.login_container form {
+    width: 65%; 
+}
+
+.login_container form input {
+    border-radius:10px;
+}
+
+.login_container .my_button {
+    /*background-image: linear-gradient(to right, rgba(32, 40, 48, 255), rgba(66, 58, 54, 255));*/
+    background-image: linear-gradient(to right, rgba(32, 40, 48, 255), rgba(0, 67, 87, 0.8));
+    color: white;
+    border-radius: 10px;
+}
+
+.login_container .dropdown-list {
+    border-radius: 10px;
+}
+
+.bg-eyecolor {
+    background-color: rgba(0, 67, 87, 0.8);
+    border-radius: 10px;
+}
+
+.eye-color {
+    color: lightgray;
+}
+
+/*--------------------- Person/Details ---------------------*/
+.details_container {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding-top: 30px; 
+}
+
+/*--------------------- AddMyNewProgram ---------------------*/
+.allprograms_container {
+    border-radius: 10px;
+    /*background-color: rgba(32, 40, 48, 255);*/
+    background-image: linear-gradient(to right, rgba(0, 67, 87, 0.8), rgba(32, 40, 48, 255));
+    color: lightgray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: smaller;
+}
+
+.alltrainings_container {
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: lightgray;
+    color: black;
+    margin-top: 20px;
+}
+
+/*--------------------- AddMyNewExercice ---------------------*/
+.image-container .image_ex {
+    border-radius: 10px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+
+/*--------------------- CreateExerciceLog ---------------------*/
+.second_container .validate_btn {
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgba(32, 40, 48, 255), rgba(0, 67, 87, 0.8));
+    border: 0;
+}
+
+
+/*--------------------- Delete_Link ---------------------*/
+.delete_link {
+    color: red;
+}

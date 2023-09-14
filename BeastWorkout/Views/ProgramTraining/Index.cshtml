@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BeastWorkout.Models.ProgramTraining>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_program)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_training)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Program.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Training.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id_program = item.Id_program, id_training = item.Id_training }, new { onclick = "return confirmDelete(" + item.Id_program + ", " + item.Id_training + ");" }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function confirmDelete(id_program, id_training) {
+        if (confirm("Are you sure you want to delete this item?")) {
+            window.location.href = '/ProgramTraining/Delete?id_program=' + id_program + '&id_training=' + id_training;
+        }
+        return false;
+    }
+</script>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BeastWorkout.Models.Exercice>
+
+@{
+    ViewData["Title"] = "GetExercice";
+}
+
+<link rel="stylesheet" href="~/css/library.css" asp-append-version="true" />
+
+<div class="container main_container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 text-center"></div>
+        <div class="col-md-8 text-center">
+            <h1>Exercices @Model.FirstOrDefault().TypeExercice.Name</h1>
+        </div>
+        <div class="col-md-2 text-center"></div>
+    </div>
+
+    <div class="container second_container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6">
+                    <div class="container my-2 text-center bg-custom text-custom image-container">
+                        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                        @if (ViewBag.Id_training != null)
+                        {
+                            <a class="nav-link" href="@Url.Action("DetailExercice", "Library", new { id_exercice = item.Id, id_training = @ViewBag.Id_training })"><img src="@Url.Content(item.Picture)" alt="Logo" class="img-fluid image_ex"></a>
+                        }
+                        else if (ViewBag.Id_profil != null)
+                        {
+                            <a class="nav-link" href="@Url.Action("DetailExercice", "Library", new { id_exercice = item.Id, id_profil = @ViewBag.Id_profil })"><img src="@Url.Content(item.Picture)" alt="Logo" class="img-fluid image_ex"></a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" href="@Url.Action("DetailExercice", "Library", new { id_exercice = item.Id })"><img src="@Url.Content(item.Picture)" alt="Logo" class="img-fluid image_ex"></a>
+
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
