@@ -60,7 +60,7 @@
                                 </th>
                                 @foreach (var prop in typeof(TrainingExercice).GetProperties())
                                 {
-                                    if (prop.Name != "Training" && prop.Name != "Exercice" && prop.Name != "Id_training" && prop.Name != "Id_exercice")
+                                    if (prop.Name != "Training" && prop.Name != "Exercice" && prop.Name != "Id_training" && prop.Name != "Id_exercice" && prop.Name != "Cpt")
                                     {
                                         if (ViewBag.program.Id_type_program == 2 || ViewBag.program.Id_type_program == 5)
                                         {

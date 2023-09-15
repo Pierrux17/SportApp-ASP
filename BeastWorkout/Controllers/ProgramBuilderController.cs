@@ -218,9 +218,10 @@ namespace BeastWorkout.Controllers
                     Rpe = p.Rpe,
                     Distance = p.Distance,
                     Time = p.Time,
+                    Cpt = p.Cpt,
                     Training = Mappers.ToASP(_trainingRepositoryDAL.GetById(p.Id_training)),
                     Exercice = Mappers.ToASP(_exerciceRepositoryDAL.GetById(p.Id_exercice)),
-                });
+                }).OrderBy(e => e.Cpt);
                 pt.Exercices = exercices;
             }
 
@@ -310,9 +311,10 @@ namespace BeastWorkout.Controllers
                 Rpe = p.Rpe,
                 Distance = p.Distance,
                 Time = p.Time,
+                Cpt = p.Cpt,
                 Training = training,
                 Exercice = Mappers.ToASP(_exerciceRepositoryDAL.GetById(p.Id_exercice)),
-            }));
+            }).OrderBy(e => e.Cpt));
         }
 
         //--------------------- AJOUTER UN NOUVEAU EXERCICE POUR UN TRAINING ---------------------

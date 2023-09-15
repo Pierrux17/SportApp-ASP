@@ -11,6 +11,7 @@
         public string? Rpe { get; set; }
         public string? Distance { get; set; }
         public string? Time { get; set; }
+        public int Cpt { get; set; }
         public virtual Training? Training { get; set; }
         public virtual Exercice? Exercice { get; set; }
     }

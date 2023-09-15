@@ -309,6 +309,7 @@ namespace BeastWorkout.Tools
                 Rpe = t.Rpe,
                 Distance = t.Distance,
                 Time = t.Time,
+                Cpt = t.Cpt,
             };
         }
 
@@ -325,6 +326,7 @@ namespace BeastWorkout.Tools
                 Rpe = t.Rpe,
                 Distance = t.Distance,
                 Time = t.Time,
+                Cpt = t.Cpt,
             };
         }
 
