@@ -116,9 +116,10 @@ namespace BeastWorkout.Controllers
                         Rpe = e.Rpe,
                         Distance = e.Distance,
                         Time = e.Time,
+                        Cpt = e.Cpt,
                         Training = Mappers.ToASP(_trainingRepositoryDAL.GetById(e.Id_training)),
                         Exercice = Mappers.ToASP(_exerciceRepositoryDAL.GetById(e.Id_exercice)),
-                    }).ToList()
+                    }).ToList().OrderBy(e => e.Cpt)
                 }).ToList();
 
                 listPersonProgram.Add(new PersonProgram
